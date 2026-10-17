@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 
-const root = path.resolve('web');
+const root = path.resolve('.');
 const types = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
@@ -27,7 +27,8 @@ http
     let p = decodeURIComponent(req.url.split('?')[0]);
     if (p === '/') p = '/index.html';
     const file = path.join(root, path.normalize(p));
-    if (!file.startsWith(root)) {
+    // 绑的是 0.0.0.0，整个局域网都能访问，别把 .git 这类目录透出去
+    if (!file.startsWith(root) || p.split('/').some((s) => s.startsWith("."))) {
       res.writeHead(403).end();
       return;
     }
