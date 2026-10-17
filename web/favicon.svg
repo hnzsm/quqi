@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#04050a"></rect>
+  <rect x="2" y="2" width="60" height="60" fill="none" stroke="#2ff3ff" stroke-width="2"></rect>
+  <text x="32" y="46" fill="#2ff3ff" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="38" font-weight="700" text-anchor="middle">趣</text>
+  <rect x="50" y="50" width="12" height="12" fill="#ff2e88"></rect>
+</svg>
